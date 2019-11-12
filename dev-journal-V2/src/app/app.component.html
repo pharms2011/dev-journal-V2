@@ -1,0 +1,14 @@
+<app-header (toggleSidenav)="leftNav.toggle()"></app-header>
+
+<mat-sidenav-container class="container" >
+
+  <mat-sidenav #leftNav mode="side" opened="false">
+    <app-left-nav></app-left-nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+<app-footer></app-footer>

@@ -1,0 +1,94 @@
+<mat-card class="card">
+  <mat-card-header class="card-header">
+    <div mat-card-avatar class="angular-header-image"></div>
+    <mat-card-title><h1>NgRx</h1></mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="card-body">
+    <h2>What is NgRx?</h2>
+    <p>
+      A powerful library used for organizing and handling state, based on the redux pattern.
+    </p>
+    <h2>What is state?</h2>
+    <p>
+      Information about the view, user information, entity data, user selection and input, or any other information
+      tracked by our application Every angular application manages state. NGRX helps keep track of this state and
+      propagates these changes in state to give our application a more cohesive experience.
+    </p>
+    <h2>What is the Redux Pattern?</h2>
+    <p>
+      The redux pattern allows for centralized state management that can be used to manage views and state by providing
+      a one way stream for data. For example, if a user provides input on a checkbox, the view uses event binding to
+      notify the component. The component creates an action representing the event including a payload which contains
+      the corresponding data. this is sent to the reducer which uses the payload and the current Store(State) to update
+      the state. The Store is a single in memory client side state storage.The states are immutable, so when the state
+      is updated, it is actually being replaced by the reducer. Any components that need this data subscribe to the
+      corresponding selector and propagates the change in state to any component's subscribed to this state.
+    </p>
+    <div class="container">
+      <img src="./assets/reduxPattern.JPG" alt="_/(-c-)\_">
+    </div>
+    <h2>Why use NgRx?</h2>
+    <p>
+      Without NgRx, we will use a service to retain data across our application. As our application gains complexity,
+      these services will become increasingly complex and numerous. With NdRx, we have a centralized location for state
+      related data. This can be helpful if the sate is spread out, data is retrieved frequently, when many components
+      need
+      to be notified, or when something gets complex and difficult to troubleshoot. You should not use NgRx for simple
+      applications or if implementing it will be too complex for your team.
+    </p>
+    <h2>The Redux Pattern in Depth</h2>
+    <p>
+      Redux is a predictable state container for JavaScript apps. It is based on facebook's flux library. It's built on
+      three principles
+    </p>
+    <div class="container">
+      <ol>
+        <li>Single source of truth called the store</li>
+        <li>State is read-only and only changed by dispatching actions</li>
+        <li>Changes are made using pure functions called reducers</li>
+      </ol>
+      <br/>
+    </div>
+    <h3>Store</h3>
+    <p>
+      The store is a js object that holds all relevant information regarding the applications state. It can be seen
+      as a client side database. Some things should not be in the state such as unshared states, angular forms, and
+      non-serializable states.
+    </p>
+    <br/>
+    <h3>Actions</h3>
+    <p>
+      Actions are simple JSON objects with a type and a payload containing relevant data.
+    </p>
+    <br/>
+    <h3>Reducers</h3>
+    <p>
+      Functions that define what should happen once a payload is received. The NgFx library is used to handle the side
+      effects of some of these actions. A reducer is a pure function that takes in two input's, the previous state and
+      the action. A pure function simply means they do not access variable from outside their function scope and always
+      returns the same output given the same input.
+    </p>
+    <br/>
+    <h3>Advantages of the Redux Pattern</h3>
+    <div class="container">
+      <ul>
+        <li>Centralized immutable state</li>
+        <li>Allows for a better view performance</li>
+        <li>Pure functions are easier to test</li>
+        <li>Tooling is easier through the reliability of states and ease of store management</li>
+        <li>Easier communications between components</li>
+      </ul>
+    </div>
+    <div class="container">
+      <p>
+        "Redux is not great for making simple things quickly. It's great for making really hard things simple"
+      </p>
+    </div>
+    <h2>Installation instructions</h2>
+    <div class="container">
+      <ol>
+        <li>npm install @ngrx/store::q</li>
+      </ol>
+    </div>
+  </mat-card-content>
+</mat-card>
